@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Telefónica Digital</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="app-header">
+            <h1>📖 Agenda Telefónica</h1>
+            <p>Sistema de gestión de contactos</p>
+        </header>
+
+        <main class="grid-layout">
+            <!-- SECCIÓN: FORMULARIO REGISTRO / EDICIÓN -->
+            <section class="card form-card">
+                <h2>➕ Nuevo Contacto</h2>
+                <form action="index.php" method="POST" id="contact-form">
+                    <input type="hidden" name="id" value="">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <input type="text" id="pais" name="pais" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="oficio">Oficio / Profesión</label>
+                        <input type="text" id="oficio" name="oficio" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            💾 Guardar Contacto
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- SECCIÓN: LISTADO Y BÚSQUEDA -->
+            <section class="card list-card">
+                <div class="list-header">
+                    <h2>📋 Lista de Contactos</h2>
+                    
+                    <!-- BARRA DE BÚSQUEDA -->
+                    <form action="index.php" method="GET" class="search-box">
+                        <input type="text" name="buscar" placeholder="Buscar por nombre, teléfono, oficio...">
+                        <button type="submit" class="btn btn-search">🔍 Buscar</button>
+                    </form>
+                </div>
+
+                <!-- TABLA DE CONTACTOS -->
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre Completo</th>
+                                <th>Teléfono</th>
+                                <th>País</th>
+                                <th>Oficio</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ejemplo Nombre</strong></td>
+                                <td>📞 12345678</td>
+                                <td>🌍 Guatemala</td>
+                                <td>💼 Perito Contador</td>
+                                <td class="actions-cell">
+                                    <a href="#" class="btn-action edit" title="Editar">✏️</a>
+                                    <a href="#" class="btn-action delete" title="Eliminar">🗑️</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
